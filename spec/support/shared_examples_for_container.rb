@@ -1,15 +1,16 @@
 shared_examples_for Container do
 
-  it 'has a default capacity when initialized' do
-    expect(subject.capacity).to eq Container::DEFAULT_CAPACITY
-  end
-
   it 'raises an error when full' do
     subject.capacity.times{subject.add_vehicle :vehicle}
     expect{subject.add_vehicle :vehicle}.to raise_error "#{described_class.name} full!"
   end
 
   describe '#capacity' do
+
+    it 'has a default capacity when initialized' do
+      expect(subject.capacity).to eq Container::DEFAULT_CAPACITY
+    end
+
     it 'can be overwritten on initialize' do
       random_capacity = Random.rand(100)
       subject = described_class.new(random_capacity)
@@ -29,7 +30,7 @@ shared_examples_for Container do
   end
 
   describe '#remove_vehicle' do
-    before(:each) {subject.add_vehicle :vehicle}
+    before(:each) { subject.add_vehicle :vehicle }
 
     it 'returns a vehicle' do
       expect(subject.remove_vehicle).to eq :vehicle

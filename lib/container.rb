@@ -1,7 +1,8 @@
 module Container
+
   DEFAULT_CAPACITY = 20
 
-  attr_reader :capacity
+  attr_accessor :capacity, :vehicles
 
   def initialize(capacity=DEFAULT_CAPACITY)
     @capacity = capacity
@@ -24,4 +25,5 @@ module Container
   def empty?
     @vehicles.empty?
   end
+
 end
