@@ -1,4 +1,8 @@
 Boris Bikes
 ===========
 
-Test read me
+Description
+===========
+
+A simple model of the Boris Bikes System
+
